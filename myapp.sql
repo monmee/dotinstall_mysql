@@ -12,10 +12,9 @@ insert into users (name, score) values ('Tanaka', 4.2);
 insert into users (name, score) values ('yamada', null);
 insert into users (name, score) values ('tashiro', 7.9);
 
-select * from users where name like 't%';
-select * from users where name like '%a%';
-select * from users where name like '%a';
-select * from users where name like binary 'T%';
-select * from users where name like '_______';
-select * from users where name like '__na%';
+select * from users order by score;
+select * from users where score is not null order by score desc;
 
+select * from users limit 3;
+select * from users limit 3 offset 3;
+select * from users where score order by score desc limit 3;
