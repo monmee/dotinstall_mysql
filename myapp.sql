@@ -12,13 +12,10 @@ insert into users (name, score) values ('Tanaka', 4.2);
 insert into users (name, score) values ('yamada', null);
 insert into users (name, score) values ('tashiro', 7.9);
 
--- select * from users;
--- select id, name from users;
--- < > <= >= = <> !=
--- is null, is not null
--- and or not
--- select * from users where score >= 6.0;
--- select * from users where score >= 3.0 and score <= 6.0;
--- select * from users where score between 3.0 and 6.0;
-select * from users where name = 'taguchi' or name = 'fkoji';
-select * from users where name in ('taguchi', 'fkoji');
+select * from users where name like 't%';
+select * from users where name like '%a%';
+select * from users where name like '%a';
+select * from users where name like binary 'T%';
+select * from users where name like '_______';
+select * from users where name like '__na%';
+
