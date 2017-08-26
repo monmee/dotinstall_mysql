@@ -12,5 +12,14 @@ insert into users (name, score) values ('Tanaka', 4.2);
 insert into users (name, score) values ('yamada', null);
 insert into users (name, score) values ('tashiro', 7.9);
 
-delete from users where score < 5.0;
-select * from users; 
+
+update users set score = score * 1.2 where id % 2 = 0;
+select * from users;
+
+select round(5.355);
+select round(5.355, 1);
+select floor(5.355);
+select ceil(5.355);
+select rand();
+
+select * from users order by rand() limit 1;
