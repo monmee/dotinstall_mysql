@@ -12,8 +12,5 @@ insert into users (name, score) values ('Tanaka', 4.2);
 insert into users (name, score) values ('yamada', null);
 insert into users (name, score) values ('tashiro', 7.9);
 
-update users set score = 5.0;
-update users set score = 4.0 where id = 1;
-update users set name = 'sasaki', score = 4.0 where name = 'tanaka';
-
+delete from users where score < 5.0;
 select * from users; 
