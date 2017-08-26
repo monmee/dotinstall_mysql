@@ -16,16 +16,10 @@ insert into users (name, score) values ('tashiro', 7.9);
 select
   name,
   score,
-  case floor(score) % 2
-    when 0 then 'even'
-    when 1 then 'odd'
-  end as type
-from 
-  users;
-
-select
-  name,
-  score,
-  if (score > 5.0, 'OK', 'NG') as result
+  case
+    when score > 8.0 then 'Team-A'
+    when score > 6.0 then 'Team-B'
+    else 'Team-C'
+  end as team
 from 
   users;
