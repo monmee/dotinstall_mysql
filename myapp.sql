@@ -13,8 +13,10 @@ insert into users (name, score) values ('Tanaka', 4.2);
 insert into users (name, score) values ('yamada', null);
 insert into users (name, score) values ('tashiro', 7.9);
 
+drop table if exists users_with_team;
 create table users_with_team as
 select
+  id,
   name,
   score,
   case
@@ -25,11 +27,14 @@ select
 from 
   users;
 
-select * from users_with_team;
+select count(score) from users_with_team;
+select count(id) from users_with_team;
+select count(*) from users_with_team;
 
-create table users_copy select * from users;
-select * from users_copy;
+select sum(score) from users_with_team;
+select min(score) from users_with_team;
+select max(score) from users_with_team;
+select avg(score) from users_with_team;
 
-create table users_empty like users;
-desc users_empty;
-select * from users_empty;
+select distinct team from users_with_team;
+select count(distinct team) from users_with_team;
