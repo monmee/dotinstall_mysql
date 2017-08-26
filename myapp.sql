@@ -27,7 +27,18 @@ select
 from 
   users;
 
-select sum(score), team from users_with_team group by team;
-select sum(score), team from users_with_team group by team desc;
-select sum(score), team from users_with_team group by team having sum(score) > 10.0;
-select sum(score), team from users_with_team where id > 3 group by team;
+select
+  sum(t.score), 
+  t.team 
+from
+  (select
+    id,
+    name,
+    score,
+    case
+      when score > 8.0 then 'Team-A'
+      when score > 6.0 then 'Team-B'
+      else 'Team-C'
+    end as team
+  from users) as t
+group by t.team;
