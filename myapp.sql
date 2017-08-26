@@ -12,14 +12,12 @@ insert into users (name, score) values ('Tanaka', 4.2);
 insert into users (name, score) values ('yamada', null);
 insert into users (name, score) values ('tashiro', 7.9);
 
+select length('Hello');
+select substr('Hello', 2);
+select substr('Hello', 2, 3);
+select upper('Hello');
+select lower('Hello');
+select concat('Hello', 'world');
 
-update users set score = score * 1.2 where id % 2 = 0;
-select * from users;
+select length(name) as len, name from users order by len;
 
-select round(5.355);
-select round(5.355, 1);
-select floor(5.355);
-select ceil(5.355);
-select rand();
-
-select * from users order by rand() limit 1;
