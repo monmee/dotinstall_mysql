@@ -27,14 +27,7 @@ select
 from 
   users;
 
-select count(score) from users_with_team;
-select count(id) from users_with_team;
-select count(*) from users_with_team;
-
-select sum(score) from users_with_team;
-select min(score) from users_with_team;
-select max(score) from users_with_team;
-select avg(score) from users_with_team;
-
-select distinct team from users_with_team;
-select count(distinct team) from users_with_team;
+select sum(score), team from users_with_team group by team;
+select sum(score), team from users_with_team group by team desc;
+select sum(score), team from users_with_team group by team having sum(score) > 10.0;
+select sum(score), team from users_with_team where id > 3 group by team;
