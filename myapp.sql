@@ -13,6 +13,7 @@ insert into users (name, score) values ('Tanaka', 4.2);
 insert into users (name, score) values ('yamada', null);
 insert into users (name, score) values ('tashiro', 7.9);
 
+create table users_with_team as
 select
   name,
   score,
@@ -23,3 +24,12 @@ select
   end as team
 from 
   users;
+
+select * from users_with_team;
+
+create table users_copy select * from users;
+select * from users_copy;
+
+create table users_empty like users;
+desc users_empty;
+select * from users_empty;
